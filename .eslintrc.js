@@ -24,7 +24,8 @@ module.exports = {
     'function-paren-newline': 0,
   },
   globals: {
-    // test: true,
-    // expect: true,
+    test: true,
+    expect: true,
+    afterEach: true,
   },
 };
