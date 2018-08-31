@@ -19,7 +19,7 @@ it('test New Movie', () => {
   expect(form.tagName).toBe('FORM');
 });
 
-it('first snapshot testing', () => {
-  const wrapper = render(<NewMovie />);
-  expect(wrapper.container).toMatchSnapshot();
-});
+// it('first snapshot testing', () => {
+//   const wrapper = render(<NewMovie />);
+//   expect(wrapper.container).toMatchSnapshot();
+// });

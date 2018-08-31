@@ -44,6 +44,25 @@ You should do snapshot testing for something that will not change frequently
 expect(wrapper.container).toMatchSnapshot();
 ```
 
+### 13 Spying and Mocking
+... still don't get why spying and mocking is useful ...
+
+- define wrapper with prop passing down
+```js
+const wrapper = render(<MovieForm handleSubmit={handleSubmit} />);
+```
+
+- define mock? spying? function on top 
+```js
+const handleSubmit = jest.fn();
+```
+
+- then you can test function have been called with how many times
+```js
+expect(handleSubmit).toHaveBeenCalledTimes(1);
+```
+
+
 
 
 

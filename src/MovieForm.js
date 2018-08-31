@@ -8,11 +8,17 @@ class MovieForm extends Component {
   };
 
   render() {
+    const { handleSubmit } = this.props;
+    const { userInput } = this.state;
     return (
       <div>
-        <form data-testid={data_testids.MovieForm_MOVIE_FORM}>
+        <form
+          onSubmit={() => handleSubmit(userInput)}
+          // onSubmit={() => console.log('clicked!')}
+          data-testid={data_testids.MovieForm_MOVIE_FORM}
+        >
           <input type="text" />
-          <input type="submit" text="submit" />
+          <button data-testid={data_testids.SUBMIT_BUTTON_AT_MOVIE_FORM}>Submit</button>
         </form>
       </div>
     );

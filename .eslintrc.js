@@ -22,10 +22,12 @@ module.exports = {
   rules: {
     'react/jsx-filename-extension': 0,
     'function-paren-newline': 0,
+    'react/button-has-type': 0,
   },
   globals: {
     test: true,
     expect: true,
     afterEach: true,
+    jest: true,
   },
 };
