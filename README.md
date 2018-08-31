@@ -81,8 +81,14 @@ expect(handleSubmit).toHaveBeenCalledWith('hi');
 ```
 
 
-
-
+### 15 - Mocking console.error
+If there are error test might not continue.
+Then you can use console.error as mock to 
+```js
+console.error = jest.fn();
+expect(console.error).toHaveBeenCalled();
+```
+Then test will continue
 
 
 ---
