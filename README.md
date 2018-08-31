@@ -90,6 +90,30 @@ expect(console.error).toHaveBeenCalled();
 ```
 Then test will continue
 
+### 16 - Testing with React Router
+1. use .not to test negative condition
+```js
+expect(console.error).not.toHaveBeenCalled();
+```
+
+2. Wrap component with MemoryRouter as test Router
+```js
+const wrapper = render(
+  <MemoryRouter>
+    <Movie movie={movie} />
+  </MemoryRouter>
+);
+```
+
+3. if mock func is defined globally then .mockClear() to clear
+```js
+console.error = jest.fn();
+
+afterEach(() => {
+  cleanup();
+  console.error.mockClear();
+});
+```
 
 ---
 side note
