@@ -18,3 +18,8 @@ it('test New Movie', () => {
   const form = wrapper.getByTestId(data_testids.MovieForm_MOVIE_FORM);
   expect(form.tagName).toBe('FORM');
 });
+
+it('first snapshot testing', () => {
+  const wrapper = render(<NewMovie />);
+  expect(wrapper.container).toMatchSnapshot();
+});

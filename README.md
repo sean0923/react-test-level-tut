@@ -36,6 +36,15 @@ handleOnClick = () => {
 ```js
 const wrapper = render(<NewMovie />);
 ```
+### 12 Snapshot Testing
+- get container from wrapper
+
+You should do snapshot testing for something that will not change frequently
+```js
+expect(wrapper.container).toMatchSnapshot();
+```
+
+
 
 
 
