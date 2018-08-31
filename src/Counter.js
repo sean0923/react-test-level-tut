@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import * as data_testids from './const/data_testids';
+import * as testids from './const/testids';
 
 class Counter extends Component {
   state = {
@@ -20,7 +20,7 @@ class Counter extends Component {
       <div>
         <button
           onClick={this.handleOnClick}
-          data-testid={data_testids.Counter_TEST_BUTTOMN}
+          data-testid={testids.Counter_TEST_BUTTOMN}
           type="button"
         >
           {count}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, cleanup, fireEvent } from 'react-testing-library';
-import * as data_testids from '../const/data_testids';
+import * as testids from '../const/testids';
 
 import NewMovie from '../NewMovie';
 
@@ -12,10 +12,10 @@ it('test New Movie', () => {
   const wrapper = render(<NewMovie />);
   // wrapper.debug();
 
-  const pageTitle = wrapper.getByTestId(data_testids.PAGE_TITLE);
+  const pageTitle = wrapper.getByTestId(testids.PAGE_TITLE);
   expect(pageTitle.textContent).toBe('New Movie');
 
-  const form = wrapper.getByTestId(data_testids.MovieForm_MOVIE_FORM);
+  const form = wrapper.getByTestId(testids.MovieForm_MOVIE_FORM);
   expect(form.tagName).toBe('FORM');
 });
 

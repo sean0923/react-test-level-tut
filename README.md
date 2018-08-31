@@ -57,11 +57,28 @@ const wrapper = render(<MovieForm handleSubmit={handleSubmit} />);
 const handleSubmit = jest.fn();
 ```
 
-- then you can test function have been called with how many times
+then you can test function have been called with how many times
+with `toHaveBeenCalledTimes`
 ```js
 expect(handleSubmit).toHaveBeenCalledTimes(1);
 ```
 
+### 14 - Form Events With Controlled Inputs
+- Now I understand why jest.fn() is useful.
+- getAttribute to get props value at html
+```js
+const handleSubmit = jest.fn();
+const wrapper = render(<MovieForm handleSubmit={handleSubmit} />);
+
+const submitBtn = wrapper.getByTestId(testids.SUBMIT_BUTTON_AT_MOVIE_FORM);
+const input = wrapper.getByTestId(testids.INPUT_AT_MOVIE_FORM);
+
+fireEvent.change(input, { target: { value: 'hi' } });
+fireEvent.click(submitBtn);
+
+expect(input.getAttribute('value')).toBe('hi');
+expect(handleSubmit).toHaveBeenCalledWith('hi');
+```
 
 
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import * as data_testids from './const/data_testids';
+import * as testids from './const/testids';
 
 class MovieForm extends Component {
   state = {
@@ -12,13 +12,14 @@ class MovieForm extends Component {
     const { userInput } = this.state;
     return (
       <div>
-        <form
-          onSubmit={() => handleSubmit(userInput)}
-          // onSubmit={() => console.log('clicked!')}
-          data-testid={data_testids.MovieForm_MOVIE_FORM}
-        >
-          <input type="text" />
-          <button data-testid={data_testids.SUBMIT_BUTTON_AT_MOVIE_FORM}>Submit</button>
+        <form onSubmit={() => handleSubmit(userInput)} data-testid={testids.MovieForm_MOVIE_FORM}>
+          <input
+            type="text"
+            onChange={e => this.setState({ userInput: e.target.value })}
+            value={userInput}
+            data-testid={testids.INPUT_AT_MOVIE_FORM}
+          />
+          <button data-testid={testids.SUBMIT_BUTTON_AT_MOVIE_FORM}>Submit</button>
         </form>
       </div>
     );
