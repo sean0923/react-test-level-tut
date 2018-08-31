@@ -22,6 +22,22 @@ handleOnClick = () => {
   }));
 };
 ```
+### 11 Integration Tests in React & Cleanup
+- create NewMovie.js & MovieForm.js
+- Insert MovieForm.js into NewMovie
+```js
+<NewMovie>
+  ...
+  <MovieForm />
+  ...
+</NewMovie>
+```
+- just rendering NewMovie will render MovieForm too ~
+```js
+const wrapper = render(<NewMovie />);
+```
+
+
 
 
 ---
